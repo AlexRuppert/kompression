@@ -293,7 +293,7 @@ describe('Compress', () => {
 
         request(app.listen())
             .get('/')
-            .set('Accept-Encoding', 'br')
+            .set('Accept-Encoding', 'gzip, deflate, br')
             .expect(200)
             .buffer()
             .end((err, res) => {

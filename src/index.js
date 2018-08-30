@@ -49,12 +49,12 @@ module.exports = (options = {}) => {
         if (!(ctx.compress === true || filter(ctx.response.type))) return
 
         // identity
-        const encoding = ctx.acceptsEncodings(
-            'br',
-            'gzip',
-            'deflate',
-            'identity'
-        )
+
+        let encoding = 'br'
+        if (!/br/.test(ctx.request.headers['accept-encoding'])) {
+            encoding = ctx.acceptsEncodings('br', 'gzip', 'deflate', 'identity')
+        }
+
         if (!encoding)
             ctx.throw(406, 'supported encodings: gzip, deflate, identity, br')
         if (encoding === 'identity') return
