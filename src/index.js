@@ -50,10 +50,10 @@ module.exports = (options = {}) => {
 
         // identity
         const encoding = ctx.acceptsEncodings(
+            'br',
             'gzip',
             'deflate',
-            'identity',
-            'br'
+            'identity'
         )
         if (!encoding)
             ctx.throw(406, 'supported encodings: gzip, deflate, identity, br')
