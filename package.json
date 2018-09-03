@@ -2,10 +2,10 @@
     "author": "Tuan Anh Tran <me@tuananh.org> (https://tuananh.org)",
     "dependencies": {
         "bytes": "3.0.0",
-        "compressible": "2.0.12",
-        "iltorb": "2.0.2",
+        "compressible": "2.0.14",
+        "iltorb": "2.4.0",
         "koa-is-json": "1.0.0",
-        "statuses": "1.4.0"
+        "statuses": "1.5.0"
     },
     "description": "koa compression middleware",
     "devDependencies": {
